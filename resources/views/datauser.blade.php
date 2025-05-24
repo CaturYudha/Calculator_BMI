@@ -78,52 +78,63 @@
 
     <!-- Add/Edit Modal -->
     <div id="userModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 hidden">
-        <div class="flex items-center justify-center min-h-screen">
-            <div class="bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
-                <div class="sm:flex sm:items-start">
-                    <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
-                        <h3 id="modalTitle" class="text-lg leading-6 font-medium text-gray-900 mb-4"></h3>
-                        <form id="userForm" class="space-y-4">
-                            <input type="hidden" id="userId">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full">
+            <div class="sm:flex sm:items-start">
+                <div class="mt-3 text-center sm:mt-0 sm:text-left w-full">
+                    <h3 id="modalTitle" class="text-lg leading-6 font-medium text-gray-900 mb-4"></h3>
+                    <form id="userForm" class="space-y-4">
+                        <input type="hidden" id="userId">
+                        <div>
+                            <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
+                            <input type="text" name="nama" id="nama" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div>
+                            <label for="kota" class="block text-sm font-medium text-gray-700">Kota</label>
+                            <input type="text" name="kota" id="kota" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label for="nama" class="block text-sm font-medium text-gray-700">Nama</label>
-                                <input type="text" name="nama" id="nama" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                            </div>
-                            <div>
-                                <label for="kota" class="block text-sm font-medium text-gray-700">Kota</label>
-                                <input type="text" name="kota" id="kota" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="usia" class="block text-sm font-medium text-gray-700">Usia</label>
-                                    <input type="number" name="usia" id="usia" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                </div>
-                                <div>
-                                    <label for="tinggi" class="block text-sm font-medium text-gray-700">Tinggi (cm)</label>
-                                    <input type="number" name="tinggi" id="tinggi" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="berat" class="block text-sm font-medium text-gray-700">Berat (kg)</label>
-                                    <input type="number" name="berat" id="berat" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                </div>
-                                <div>
-                                    <label for="hasil" class="block text-sm font-medium text-gray-700">Hasil</label>
-                                    <input type="number" name="hasil" id="hasil" step="0.01" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
-                                </div>
+                                <label for="usia" class="block text-sm font-medium text-gray-700">Usia</label>
+                                <input type="number" name="usia" id="usia" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
                             <div>
-                                <label for="kategori" class="block text-sm font-medium text-gray-700">Kategori</label>
-                                <input type="text" name="kategori" id="kategori" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label for="tinggi" class="block text-sm font-medium text-gray-700">Tinggi (cm)</label>
+                                <input type="number" name="tinggi" id="tinggi" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="berat" class="block text-sm font-medium text-gray-700">Berat (kg)</label>
+                                <input type="number" name="berat" id="berat" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
                             <div>
-                                <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label>
-                                <input type="date" name="tanggal" id="tanggal" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                                <label for="hasil" class="block text-sm font-medium text-gray-700">Hasil (BMI)</label>
+                                <input type="text" name="hasil" id="hasil" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-100" readonly> 
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <div>
+                            <label for="kategori" class="block text-sm font-medium text-gray-700">Kategori Berat Badan</label>
+                            <input type="text" name="kategori" id="kategori" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md bg-gray-100" readonly> 
+                        </div>
+                        <div>
+                            <label for="tanggal" class="block text-sm font-medium text-gray-700">Tanggal</label>
+                            <input type="date" name="tanggal" id="tanggal" class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        </div>
+                    </form>
                 </div>
+            </div>
+            <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                <button type="button" onclick="saveUser()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    Save
+                </button>
+                <button type="button" onclick="closeModal()" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:w-auto sm:text-sm">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
                 <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
                     <button type="button" onclick="saveUser()" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
                         Save
@@ -137,32 +148,61 @@
     </div>
 
     <script>
-        // Fetch and display user data
-        function loadUsers() {
-            $.get('http://127.0.0.1:8000/api/users', function(data) {
-                let tableBody = $('#userTableBody');
-                tableBody.empty();
-                data.forEach(user => {
-                    tableBody.append(`
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${user.id}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.nama}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.kota}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.usia}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.tinggi}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.berat}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.hasil}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.kategori}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.tanggal}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <button onclick="openEditModal(${user.id})" class="text-blue-600 hover:text-blue-800">Edit</button>
-                                <button onclick="deleteUser(${user.id})" class="text-red-600 hover:text-red-800 ml-4">Delete</button>
-                            </td>
-                        </tr>
-                    `);
-                });
-            });
+            // Fungsi untuk menghitung dan menampilkan Hasil (BMI) dan Kategori
+    function updateHasilDanKategori() {
+        const berat = parseFloat($('#berat').val());
+        const tinggiCm = parseFloat($('#tinggi').val());
+        let hasilBMI = '';
+        let kategori = '';
+
+        // Hitung BMI jika berat dan tinggi valid
+        if (!isNaN(berat) && !isNaN(tinggiCm) && tinggiCm > 0 && berat > 0) {
+            const tinggiM = tinggiCm / 100; // Ubah tinggi dari cm ke meter
+            hasilBMI = (berat / (tinggiM * tinggiM)).toFixed(2); // BMI = berat (kg) / (tinggi (m))^2, dibulatkan 2 desimal
         }
+        $('#hasil').val(hasilBMI); // Update field hasil
+
+        // Tentukan kategori berdasarkan berat
+        if (!isNaN(berat) && berat > 0) {
+            if (berat < 45) {
+                kategori = 'Kurus';
+            } else if (berat > 80) {
+                kategori = 'Gemuk';
+            } else { // Antara 45 kg dan 80 kg (inklusif)
+                kategori = 'Ideal';
+            }
+        }
+        $('#kategori').val(kategori); // Update field kategori
+    }
+
+
+        // Fetch and display user data
+    function loadUsers() {
+        // ... (fungsi loadUsers Anda tetap sama) ...
+        $.get('http://127.0.0.1:8000/api/users', function(data) {
+            let tableBody = $('#userTableBody');
+            tableBody.empty();
+            data.forEach(user => {
+                tableBody.append(`
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${user.id}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.nama}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.kota}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.usia}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.tinggi}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.berat}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.hasil || '-'}</td> 
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.kategori || '-'}</td> 
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${user.tanggal}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <button onclick="openEditModal(${user.id})" class="text-blue-600 hover:text-blue-800">Edit</button>
+                            <button onclick="deleteUser(${user.id})" class="text-red-600 hover:text-red-800 ml-4">Delete</button>
+                        </td>
+                    </tr>
+                `);
+            });
+        });
+    }
 
         // Open Add User Modal
         function openAddModal() {
@@ -190,58 +230,79 @@
 
         // Save User (Add or Edit)
         function saveUser() {
-            let userId = $('#userId').val();
-            let userData = {
-                nama: $('#nama').val(),
-                kota: $('#kota').val(),
-                usia: $('#usia').val(),
-                tinggi: $('#tinggi').val(),
-                berat: $('#berat').val(),
-                hasil: $('#hasil').val(),
-                kategori: $('#kategori').val(),
-                tanggal: $('#tanggal').val()
-            };
+        // Panggil updateHasilDanKategori sekali lagi untuk memastikan nilai terbaru sebelum submit
+        // Meskipun event listener sudah ada, ini untuk jaga-jaga jika ada perubahan non-event
+        updateHasilDanKategori(); 
 
-            if (userId) {
-                // Edit User
-                $.ajax({
-                    url: `http://127.0.0.1:8000/api/users/${userId}`,
-                    method: 'PUT',
-                    data: userData,
-                    success: function() {
-                        loadUsers();
-                        closeModal();
-                    }
-                });
-            } else {
-                // Add New User
-                $.post('http://127.0.0.1:8000/api/users', userData, function() {
+        let userId = $('#userId').val();
+        let userData = {
+            nama: $('#nama').val(),
+            kota: $('#kota').val(),
+            usia: $('#usia').val(),
+            tinggi: $('#tinggi').val(),
+            berat: $('#berat').val(),
+            hasil: $('#hasil').val(),       // Akan mengambil nilai yang sudah dihitung
+            kategori: $('#kategori').val(), // Akan mengambil nilai yang sudah dihitung
+            tanggal: $('#tanggal').val()
+        };
+
+        let ajaxUrl = 'http://127.0.0.1:8000/api/users';
+        let ajaxMethod = 'POST';
+
+        if (userId) { // Jika ada userId, berarti ini mode Edit
+            ajaxUrl += `/${userId}`;
+            ajaxMethod = 'PUT';
+        }
+
+        $.ajax({
+            url: ajaxUrl,
+            method: ajaxMethod,
+            contentType: 'application/json', // Kirim sebagai JSON
+            data: JSON.stringify(userData),  // Ubah data menjadi string JSON
+            success: function() {
+                loadUsers();
+                closeModal();
+            },
+            error: function(xhr, status, error) {
+                // Tambahkan penanganan error jika perlu
+                console.error("Error saving user:", status, error);
+                alert("Gagal menyimpan data: " + (xhr.responseJSON ? JSON.stringify(xhr.responseJSON.errors || xhr.responseJSON.message) : error));
+            }
+        });
+    }
+
+
+    function deleteUser(userId) {
+        // ... (fungsi deleteUser Anda tetap sama) ...
+        if (confirm('Are you sure you want to delete this user?')) {
+            $.ajax({
+                url: `http://127.0.0.1:8000/api/users/${userId}`,
+                method: 'DELETE',
+                success: function() {
                     loadUsers();
-                    closeModal();
-                });
-            }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error deleting user:", status, error);
+                    alert("Gagal menghapus data: " + error);
+                }
+            });
         }
+    }
 
-        // Delete User
-        function deleteUser(userId) {
-            if (confirm('Are you sure you want to delete this user?')) {
-                $.ajax({
-                    url: `http://127.0.0.1:8000/api/users/${userId}`,
-                    method: 'DELETE',
-                    success: function() {
-                        loadUsers();
-                    }
-                });
-            }
-        }
 
-        // Close Modal
-        function closeModal() {
-            $('#userModal').hide();
-        }
-        function logout() {
-            window.location.href = '/'; // Ganti dengan URL logout
-        }S
+    function closeModal() {
+        $('#userForm')[0].reset(); // Reset form saat modal ditutup
+        updateHasilDanKategori();  // Kosongkan field hasil & kategori juga
+        $('#userModal').addClass('hidden');
+        $('#userModal').removeClass('flex'); // Jika Anda menggunakan flex
+        // Atau cara jQuery standar: $('#userModal').hide();
+    }
+
+    function logout() {
+        // Implementasi logout Anda
+        window.location.href = '/'; // Ganti dengan URL logout yang sesuai
+    }
+
 
         // Initial load of users
         $(document).ready(function() {
